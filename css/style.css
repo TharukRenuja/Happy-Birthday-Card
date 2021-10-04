@@ -1,0 +1,289 @@
+.content {
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 30vh 70vh;
+}
+.content > * {
+  width: 100%;
+}
+
+.frame {
+  grid-row: 2/3;
+  grid-column: 2/4;
+  display: none;
+  opacity: 0;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  color: #fff;
+  font-family: "Courgette", cursive;
+  background-color: black;
+}
+
+.balloon {
+  grid-row: 1/-1;
+  width: 130%;
+}
+.balloon--left {
+  grid-column: 1/2;
+  animation: balloon-move 4s linear 0s infinite;
+}
+.balloon--right {
+  grid-column: 4/5;
+  margin-left: -20%;
+  animation: balloon-move 4s linear 0s infinite reverse;
+}
+
+.flag {
+  grid-row: 1/2;
+  z-index: 0;
+}
+.flag--c-left {
+  grid-column: 2/3;
+}
+.flag--c-right {
+  grid-column: 3/4;
+}
+.flag--left {
+  grid-column: 1/2;
+}
+.flag--right {
+  grid-column: 4/5;
+}
+
+.img-back {
+  position: relative;
+  background-color: #ffa8dc;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 50%;
+}
+
+.bd-pic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 83.33333333%;
+  width: 83.33333333%;
+  border-color: #fff;
+  border-style: dotted;
+  border-radius: 50%;
+}
+
+.cap {
+  position: absolute;
+  top: -15%;
+  left: 50%;
+  transform: translate(0, 0);
+  height: 33.33333333%;
+}
+
+.confetti {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 150%;
+  width: 150%;
+}
+
+.cake {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 70%;
+  width: 70%;
+}
+
+.HBD {
+  font-size: 2.4rem;
+  padding: 0;
+}
+
+.name {
+  font-size: 3.2rem;
+  padding: 0;
+}
+
+.scroll {
+  position: relative;
+  overflow-y: hidden;
+  height: 70%;
+  width: 70%;
+}
+
+.scroll p {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, 0);
+}
+
+.btn {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(0, -50%);
+  display: none;
+  overflow: hidden;
+  height: 20vw;
+  width: 20vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  animation: heart-beat 2s linear 0s infinite alternate;
+}
+
+.btn-ref {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
+  color: #fff;
+  display: none;
+  font-size: 1.8rem;
+}
+
+.switch {
+  background-image: url("../resources/img/bulb.svg");
+}
+
+.gift {
+  background-image: url("../resources/img/gift.svg");
+}
+
+.door-in,
+.door-out {
+  background-image: url("../resources/img/door.svg");
+}
+
+.darkroom,
+.flash,
+.giftroom,
+.empty-room,
+.hallway {
+  text-align: center;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}
+
+.darkroom {
+  background-color: #000;
+}
+
+.flash {
+  background-color: #fff;
+}
+
+.giftroom,
+.empty-room {
+  background-color: #141852;
+}
+
+.hallway {
+  overflow: hidden;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes read {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes heart-beat {
+  0% {
+    transform: translate(-50%, -50%) scale(1, 1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.25, 1.25);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1, 1);
+  }
+}
+@keyframes balloon-move {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  25% {
+    transform: translateY(5%) rotate(3deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0);
+  }
+  75% {
+    transform: translateY(-5%) rotate(-3deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+@keyframes move-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+.hidden {
+  display: none;
+}
+
+.fade-in {
+  animation: fade 2s ease-in 0s;
+}
+
+.appear {
+  animation: fade 2s linear 0s 1 reverse;
+}
+
+.read {
+  animation: read 4s linear 0s;
+}
+
+.move-up {
+  animation: move-up 80s linear 3s;
+}
+
+/*# sourceMappingURL=style.css.map */
