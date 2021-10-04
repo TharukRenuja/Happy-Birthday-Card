@@ -7,5 +7,6 @@ This is a template for a birthday card. In this version an additional haunted ha
 
 ## Credits
 
--[AnshumanMahato](https://github.com/AnshumanMahato)
--[AsmSafone](https://github.com/AsmSafone)
+- [AnshumanMahato](https://github.com/AnshumanMahato)
+
+- [AsmSafone](https://github.com/AsmSafone)
